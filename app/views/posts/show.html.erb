@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @post.name %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%= @post.date %>
+</p>
+
+<p>
+	<b>Links for this post:</b>
+	<ul>
+	<%= @post.links.each do |link| %>
+	<li><%= link_to link.name, link.url %></li>
+	<% end %>
+	</ul>
+<p>
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>
+</p>
